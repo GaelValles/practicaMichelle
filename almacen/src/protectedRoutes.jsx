@@ -15,7 +15,6 @@ function ProtectedRoute() {
 
     return (
         <div>
-
             <Outlet />
         </div>
     );
