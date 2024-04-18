@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "./components/AuthContext";
-import SidePage from "./pages/sidebar"
+
 function ProtectedRoute() {
     const { loading, isAuthenticated } = useAuth();
 
@@ -15,7 +15,6 @@ function ProtectedRoute() {
 
     return (
         <div>
-            <SidePage />
             <Outlet />
         </div>
     );
