@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Loginpage from './pages/Loginpage';
 import Registerpage from './pages/Registerpage';
-import ProtectedRoute from "./protectedRoutes";
+import Home from './pages/Home';
 import Insertproduct from './pages/Insertproduct';
 import Insertdealer from './pages/Insertdealer';
 import { AuthProvider } from './components/AuthContext';
@@ -10,15 +10,11 @@ function app() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Loginpage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Loginpage />} />
           <Route path="/register" element={<Registerpage />} />
-          
-          <Route element={<ProtectedRoute />}>
-            <Route path="/insertproduct" element={<Insertproduct />} />
-            <Route path="/insertdealer" element={<Insertdealer />} />
-          </Route>
-        
+          <Route path="/insertproduct" element={<Insertproduct />} />
+          <Route path="/insertdealer" element={<Insertdealer />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
